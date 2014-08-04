@@ -114,6 +114,12 @@ MonoBehaviour:
     IsTrigger: 0
     Size: {x: 1.54999995, y: .330000013}
     Position: {x: 0, y: 0}
+  - Enabled: 1
+    Material: {fileID: 0}
+    Name: GroundCollider
+    IsTrigger: 0
+    Size: {x: 3.91000009, y: 3.01999998}
+    Position: {x: 2.32999992, y: -.330000013}
 --- !u!4 &225676288
 Transform:
   m_ObjectHideFlags: 0
@@ -121,7 +127,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 225676286}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .923303187, y: -.507265449, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

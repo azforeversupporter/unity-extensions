@@ -34,8 +34,12 @@ namespace UnityExtensions.NamedBoxCollider
             }
 
             var pos = transform.position;
+            var style = new GUIStyle
+            {
+                normal = new GUIStyleState { textColor = Color.grey },
+                fontSize = 10
+            };
             Gizmos.color = Color.blue;
-            Handles.color = Color.blue;
 
             if (NamedBoxColliders != null)
             {
@@ -48,7 +52,15 @@ namespace UnityExtensions.NamedBoxCollider
 
                         // Draw wire cube for the collider
                         Gizmos.DrawWireCube(center, collider.Size);
-                        Handles.Label(topLeft, collider.Name, style);
+
+                        try
+                        {
+                            Handles.Label(topLeft, collider.Name, style);
+                        }
+                        catch (System.Exception ex)
+                        {
+                            Debug.LogError(ex.Message);
+                        }
                     }
                 }
             }
@@ -72,14 +84,5 @@ namespace UnityExtensions.NamedBoxCollider
                 collider.Destroy();
             }
         }
-
-#if UNITY_EDITOR
-        private GUIStyle style = new GUIStyle
-        {
-            normal = new GUIStyleState { textColor = Color.blue },
-            clipping = TextClipping.Clip,
-            fontSize = 10
-        };
-#endif
     }
 }
